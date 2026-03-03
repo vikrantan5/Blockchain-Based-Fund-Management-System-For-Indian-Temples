@@ -1,18 +1,27 @@
 {
-  "name": "backend",
+  "name": "smartngo-backend",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "saurabh vaidya",
+  "description": "SmartNGO - Blockchain-based transparent fund management system for NGOs (Testnet only)",
+  "license": "MIT",
+  "author": "SmartNGO Team",
   "type": "module",
   "main": "src/index.js",
   "directories": {
     "test": "test"
   },
-  "scripts": {
-    "dev": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"scripts": {
+  "dev": "nodemon src/index.js",
+  "start": "node src/index.js",
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "compile": "hardhat compile",
+  "deploy:registry": "hardhat run scripts/deployRegistry.js --network amoy",
+  "deploy:fund": "hardhat run scripts/deployFund.js --network amoy",
+  "deploy:all": "npm run deploy:registry && npm run deploy:fund",
+  "register:ngo": "hardhat run scripts/registerNGO.js --network amoy",
+  "donate": "hardhat run scripts/donateToNGO.js --network amoy",
+  "balance": "hardhat run scripts/getNGOBalance.js --network amoy",
+  "withdraw": "hardhat run scripts/withdrawNGOFunds.js --network amoy"
+},
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cloudinary": "^2.6.0",
