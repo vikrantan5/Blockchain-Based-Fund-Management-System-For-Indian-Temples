@@ -319,7 +319,7 @@ NODE_ENV=development
 # MongoDB
 MONGODB_URI=mongodb://localhost:27017/smartngo
 # OR use MongoDB Atlas
-# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/smartngo
+
 
 # JWT Authentication
 ACCESS_TOKEN_SECRET=your_access_token_secret_here_min_32_chars
